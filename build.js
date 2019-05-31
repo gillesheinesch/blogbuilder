@@ -9,7 +9,6 @@ program
     .option('-n, --blogname {name of your blog}', 'Name of your blog')
     .option('-i, --blogicon <url>', 'Icon of your blog')
     .option('-u, --update', 'Updates your blog website with the newest blog entries')
-    .option('-c, --create <title>', 'Creates a new blog entry')
     .option('-b, --background <url>', 'Background image')
     .parse(process.argv);
 
