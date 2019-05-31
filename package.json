@@ -1,0 +1,19 @@
+{
+  "name": "blogbuilder",
+  "version": "0.0.1",
+  "description": "A customized blog for everyone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monkeyyy11/blogbuilder.git"
+  },
+  "author": "Gilles Heinesch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Monkeyyy11/blogbuilder/issues"
+  },
+  "homepage": "https://github.com/Monkeyyy11/blogbuilder#readme"
+}
