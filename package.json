@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Monkeyyy11/blogbuilder#readme",
   "dependencies": {
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "fs": "0.0.1-security"
   }
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title id="blogName">Blog name</title>
+        <meta name="keywords"
+        content="blog, blogbuilder">
+        <meta name="robots" content="INDEX, FOLLOW">
+        <meta name="revisit-after" content="7 days">
+        <link rel="icon" href="https://i.imgur.com/TFle1Cb.png" type="image/x-icon">
+        <meta name="theme-color" content="#33cc33">
+        <meta name="author" content="Test">
+        <link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.css" media="all" rel="stylesheet"
+        type="text/css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+        integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="/light.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row" id="blog_section">
+                <h1>Blog:</h1>
+                <div id="blogs"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $.getJSON("blog.json", function(blog){
+                if(blog.length == 0){
+                    return document.getElementById("blog_section").html('<p>No blog entries!</p>');
+                }
+                for (var i = 0; i < blog.length; i++){
+                    $("#blogs").append(`
+                    <a href="./blog/${blog[i].url_title}/" target="_blank">
+                        <section>
+                            <img src="${blog[i].top_image}">
+                            <div class="blog_container">
+                                <div class="section_title">${blog[i].title}</div>
+                                <div class="about_section">
+                                    ${blog[i].sub_title}
+                                </div>
+                            </div>
+                        </section>
+                    </a>
+                    `);
+                }
+            });
+            </script>
+    </body>
+</html>
