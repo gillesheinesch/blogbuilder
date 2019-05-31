@@ -2,7 +2,7 @@
   "name": "blogbuilder",
   "version": "0.0.1",
   "description": "A customized blog for everyone",
-  "main": "index.js",
+  "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Monkeyyy11/blogbuilder/issues"
   },
-  "homepage": "https://github.com/Monkeyyy11/blogbuilder#readme"
+  "homepage": "https://github.com/Monkeyyy11/blogbuilder#readme",
+  "dependencies": {
+    "commander": "^2.20.0"
+  }
 }
