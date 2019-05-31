@@ -14,13 +14,7 @@ program
     .parse(process.argv);
 
 if (program.blogname) {
-    var settingsJson = JSON.parse(fs.readFileSync('settings.json', err => {
-        if (err) {
-            return console.error('Couldn\'t load settings.json!')
-        } else {
-            console.log('Loaded settings.json!')
-        }
-    }).toString());  
+    var settingsJson = JSON.parse(fs.readFileSync('settings.json').toString());  
 
     settingsJson[0].blogName = program.args[0];
 
@@ -34,13 +28,7 @@ if (program.blogname) {
 }
 
 if (program.blogicon) {
-    var settingsJson = JSON.parse(fs.readFileSync('settings.json', err => {
-        if (err) {
-            return console.error('Couldn\'t load settings.json!')
-        } else {
-            console.log('Loaded settings.json!')
-        }
-    }).toString());
+    var settingsJson = JSON.parse(fs.readFileSync('settings.json').toString());  
 
     if (program.args[0].match(/\.(jpeg|jpg|png)$/) === null) return console.error('Your image link has to end with .JPEG, .JPG or .PNG!')
 
