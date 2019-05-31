@@ -21,11 +21,6 @@ program
 	.parse(process.argv);
 
 if (program.title) {
-	if (!fs.existsSync('./blog')) {
-		fs.mkdirSync('./blog');
-		console.log('Blog folder created!');
-	}
-
 	if (!fs.existsSync(`./blog/${program.title}`)) {
 		fs.mkdirSync(`./blog/${program.title}`);
 		console.log(`${program.title} folder created!`);
@@ -38,7 +33,7 @@ if (program.title) {
 			const document = window.document;
 			const style = document.createElement('link');
 			style.setAttribute('rel', 'stylesheet');
-			style.setAttribute('href', '../../index.css');
+			style.setAttribute('href', './../index.css');
 			document.getElementsByTagName('head')[0].appendChild(style);
 
 			document.getElementsByTagName('title')[0].textContent = program.pagetitle ? program.pagetitle : 'Test Entry';
@@ -57,13 +52,13 @@ if (program.title) {
 					keywords: [],
 					tags: []
 				};
-				fs.readFile('./../blog.json', (error2, data) => {
+				fs.readFile('./blog/blog.json', (error2, data) => {
 					if (error2) throw error2;
 					const oldBlogs = JSON.parse(data);
 					oldBlogs.push(blogEntrySettings);
 					fs.writeFile('./blog/blog.json', JSON.stringify(oldBlogs, null, ' '), error3 => {
 						if (error3) throw error3;
-						console.log('Created Successfully a new blog entry in the "blog" folder!');
+						console.log('Created successfully a new blog entry in the blog folder!');
 					});
 				});
 			});
