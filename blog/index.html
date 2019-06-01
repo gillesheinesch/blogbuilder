@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title id="blogName">Name of the Blog</title>
+    <title id="blogName">test's Blog</title>
     <meta name="keywords" content="blog, blogbuilder">
     <meta name="robots" content="INDEX, FOLLOW">
     <meta name="revisit-after" content="7 days">
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row" id="blog_section">
             <h1>
-                <div id="blog_title">Name of the Blog</div>'s Blog:
+                <div id="blog_title">test's Blog</div>
             </h1>
             <div id="blogs"></div>
         </div>
@@ -36,17 +36,16 @@
             }
             for (var i = 0; i < blog.length; i++) {
                 $("#blogs").append(`
-                    <a href="./blog/${blog[i].url_title}/" target="_blank">
-                        <section>
-                            <img src="${blog[i].top_image}">
-                            <div class="blog_container">
-                                <div class="section_title">${blog[i].title}</div>
+                <div class="card text-left">
+                  <img class="card-img-top" src="${blog[i].headerImage}">
+                  <div class="card-body">
+                        <div class="section_title">${blog[i].title}</div>
                                 <div class="about_section">
-                                    ${blog[i].sub_title}
+                                    ${blog[i].subTitle}
                                 </div>
-                            </div>
-                        </section>
-                    </a>
+                                <a href="./${blog[i].title}/index.html" class="btn btn-primary">Read more</a>
+                  </div>
+                </div>
                     `);
             }
         });

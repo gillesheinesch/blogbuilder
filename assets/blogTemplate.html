@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row" id="blog_section">
             <h1>
-                <div id="blog_title"></div>'s Blog:
+                <div id="blog_title"></div>
             </h1>
             <div id="blogs"></div>
         </div>
@@ -45,17 +45,16 @@
             }
             for (var i = 0; i < blog.length; i++) {
                 $("#blogs").append(`
-                    <a href="./blog/${blog[i].url_title}/" target="_blank">
-                        <section>
-                            <img src="${blog[i].top_image}">
-                            <div class="blog_container">
-                                <div class="section_title">${blog[i].title}</div>
+                <div class="card text-left">
+                  <img class="card-img-top" src="${blog[i].headerImage}">
+                  <div class="card-body">
+                        <div class="section_title">${blog[i].title}</div>
                                 <div class="about_section">
-                                    ${blog[i].sub_title}
+                                    ${blog[i].subTitle}
                                 </div>
-                            </div>
-                        </section>
-                    </a>
+                                <a href="./${blog[i].title}/index.html" class="btn btn-primary">Read more</a>
+                  </div>
+                </div>
                     `);
             }
         });
