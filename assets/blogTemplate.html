@@ -32,10 +32,12 @@
 <body>
     <div class="container">
         <div class="row" id="blog_section">
-            <h1>
-                <div id="blog_title"></div>
-            </h1>
-            <div id="blogs"></div>
+            <div class="col-lg-12">
+                <h1>
+                    <div id="blog_title" class="text-center"></div>
+                </h1>
+            </div>
+                <div id="blogs"></div>
         </div>
     </div>
     <script type="text/javascript">
@@ -45,8 +47,9 @@
             }
             for (var i = 0; i < blog.length; i++) {
                 $("#blogs").append(`
-                <div class="card text-left">
-                  <img class="card-img-top" src="${blog[i].headerImage}">
+                <div class="col-xs-4">
+                <div class="card text-left" style="width: 18rem;">
+                  <img class="card-img-top" src="${blog[i].headerImage}" width="200" height="300">
                   <div class="card-body">
                         <div class="section_title">${blog[i].title}</div>
                                 <div class="about_section">
@@ -54,6 +57,7 @@
                                 </div>
                                 <a href="./${blog[i].title}/index.html" class="btn btn-primary">Read more</a>
                   </div>
+                </div>
                 </div>
                     `);
             }
