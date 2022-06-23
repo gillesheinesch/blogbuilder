@@ -19,6 +19,6 @@
   "dependencies": {
     "commander": "^2.20.0",
     "fs": "0.0.1-security",
-    "jsdom": "^15.1.1"
+    "jsdom": "^16.5.0"
   }
 }
